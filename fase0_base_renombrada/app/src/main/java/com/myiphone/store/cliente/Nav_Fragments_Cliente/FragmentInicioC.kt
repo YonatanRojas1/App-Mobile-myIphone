@@ -1,0 +1,64 @@
+package com.myiphone.store.cliente.Nav_Fragments_Cliente
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.myiphone.store.R
+import com.myiphone.store.cliente.Bottom_Nav_Fragments_Cliente.FragmentCarritoC
+import com.myiphone.store.cliente.Bottom_Nav_Fragments_Cliente.FragmentFavoritosC
+import com.myiphone.store.cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC
+import com.myiphone.store.cliente.Bottom_Nav_Fragments_Cliente.FragmentTiendaC
+import com.myiphone.store.databinding.FragmentInicioCBinding
+
+
+
+class FragmentInicioC : Fragment() {
+
+    private lateinit var binding: FragmentInicioCBinding
+
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+
+        binding = FragmentInicioCBinding.inflate(inflater, container, false)
+
+
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.op_tienda_c -> {
+                    replaceFragmente(FragmentTiendaC())
+                }
+                R.id.op_favoritos_c ->{
+                    replaceFragmente(FragmentFavoritosC())
+                }
+
+                R.id.op_mis_ordenes_c -> {
+                    replaceFragmente(FragmentMisOrdenesC())
+                }
+                R.id.op_carrito_c->{
+                    replaceFragmente(FragmentCarritoC())
+
+                }
+
+            }
+            true
+        }
+
+        replaceFragmente(FragmentTiendaC())
+        binding.bottomNavigation.selectedItemId = R.id.op_tienda_c
+
+        return binding.root
+    }
+
+    private fun replaceFragmente(fragment: Fragment) {
+        parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.bottomFragment, fragment)
+            .commit()
+
+    }
+
+
+}

@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">MyIphone</string>
+
+    <string name="default_web_client_id">REEMPLAZAR_CON_TU_WEB_CLIENT_ID.apps.googleusercontent.com</string>
+
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">Close drawer</string>
+
+    <string name="tipoVendedor">Vendedor</string>
+    <string name="tipoCliente">Cliente</string>
+
+    <!-- Navegation Drawel Vendedor -->
+    <string name="op_inicio_v">Inicio</string>
+    <string name="op_mi_tienda">Mi tienda</string>
+    <string name="op_categorias_v">Categorías</string>
+    <string name="op_reseñas_v">Reseñas</string>
+    <string name="op_cerrar_sesion_v">Cerrar sesion</string>
+
+    <!-- Navegación Drawel Cliente -->
+    <string name="op_inicio_c">Inicio</string>
+    <string name="op_mi_perfil_c">Mi perfil</string>
+    <string name="op_cerrar_sesion_c">Cerrar Sesión</string>
+
+    <!-- Button Navigation Bar Vendedor -->
+    <string name="op_mis_productos_v">Mis productos</string>
+    <string name="op_mis_ordenes_v">Órdenes</string>
+
+
+    <!-- Navegación Drawel Cliente -->
+    <string name="op_tienda_c">Tienda</string>
+    <string name="op_favoritos_c">Favoritos</string>
+    <string name="op_mis_ordenes_c">Mis Ordenes</string>
+    <string name="txt_bienvenida">Bienvenido(a)</string>
+    <string name="op_carrito_c">Carrito</string>
+    <string name="op_mapa">¿Dónde estamos?</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Registro de vendedor -->
+    <string name="txtRegistroV">Registro de vendedor</string>
+    <string name="etNombresV">Nombres completos</string>
+    <string name="etEmail">Email</string>
+    <string name="etPassword">Password</string>
+    <string name="etCPassword">Confirmar Password</string>
+    <string name="btnRegistrarV">Registrar</string>
+
+    <!-- Registro de clientes -->
+    <string name="txtRegistroC">Registro de cliente</string>
+    <string name="etNombresC">Nombres Completos</string>
+    <string name="btnRegistrarC">Registrarme</string>
+
+
+    <!-- Login de vendedor -->
+    <string name="txtLoginV">Login de vendedor</string>
+    <string name="btnLoginV">Ingresar</string>
+    <string name="txtNoCuenta">¿No tienes una cuenta?</string>
+    <string name="tvRegistrarV">Registrarme</string>
+    <string name="Unete">Unete</string>
+    <string name="subTitle">Estamos felices de que estes aqui</string>
+    <string name="title_blum">MyIphone</string>
+    <string name="registrate_ahora">Registrate ahora</string>
+
+    <!-- Login de cliente -->
+    <string name="txtLoginC">Unete</string>
+    <string name="btnLoginC">Ingresar</string>
+    <string name="tvRegistrarC">Registrarme</string>
+
+    <!--Productos-->
+    <string name="txtAgregarProductos">Agregar Productos</string>
+    <string name="etNombresP">Nombre del producto</string>
+    <string name="etDescripcionP">Descripción</string>
+    <string name="Categoria">Categoría</string>
+    <string name="etPrecioP">Precio</string>
+    <string name="txtDescuento">Descuento</string>
+    <string name="etPrecioConDescuentoP">Precio con descuento apli.</string>
+    <string name="etNotaDescuentoP">Ejm: 10% Desc.</string>
+    <string name="btnAgregarProducto">Agregar Producto</string>
+
+    <!--Agregar categorias-->
+    <string name="etCategoria">Ingrese categoria</string>
+    <string name="btnAgregarCat">Agregar categoria</string>
+
+    <!-- Item Categoria - v -->
+    <string name="item_nombre_c_v">Nombre de categoria:</string>
+    <string name="item_ver_productos">Ver productos</string>
+    <!-- Item Categoria - c -->
+    <string name="item_nombre_c_c">Nombre de categoria</string>
+
+
+    <!--Item producto - v-->
+    <string name="item_nombre_p">Nombre del producto</string>
+    <string name="item_nota_p">50% OFF</string>
+    <string name="item_precio_p">00</string>
+    <string name="item_precio_p_desc">00</string>
+
+    <!--Item producto - c-->
+    <string name="item_agregar_carrito_p">Añadir al carrito</string>
+
+    <string name="etBuscarProducto">Buscar producto</string>
+
+    <!--Carrito de compras-->
+    <string name="nombrePCar">Nombre del producto</string>
+    <string name="descripcionPCar">Descripción</string>
+    <string name="notaDescPCar">10% OFF</string>
+    <string name="precioOriginalPCar">00</string>
+    <string name="precioDescPCar">00</string>
+    <string name="cantidadPCar">1</string>
+    <string name="precioFinalPCar">00</string>
+    <string name="btnAgregarCarrito">Agregar al carrito</string>
+
+    <!--<string name="op">Blum</string>
+    <string name="op">Blum</string>-->
+</resources>
