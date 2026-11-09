@@ -7,6 +7,10 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.myiphone.store.BiometricAuth
+import com.myiphone.store.RecuperarPasswordActivity
+import com.myiphone.store.SesionUtil
+import com.myiphone.store.R
 import com.myiphone.store.databinding.ActivityLoginVendedorBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -36,6 +40,14 @@ class LoginVendedorActivity : AppCompatActivity() {
 
         binding.btnLoginV.setOnClickListener{
             validarInfo()
+        }
+
+
+        /*Huella: solo si ya hay una sesión guardada en el dispositivo*/
+        binding.btnLoginHuella.setOnClickListener { ingresarConHuella() }
+
+        binding.tvOlvidePassword.setOnClickListener {
+            startActivity(Intent(this, RecuperarPasswordActivity::class.java))
         }
 
         binding.tvRegistrarV.setOnClickListener{
@@ -76,15 +88,29 @@ class LoginVendedorActivity : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this, MainActivityVendedor::class.java))
-                finishAffinity()
-                Toast.makeText(this, "Inicio de sesion exitoso", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.auth_bienvenido, Toast.LENGTH_SHORT).show()
+                SesionUtil.abrirPanel(this)
             }
             .addOnFailureListener { e->
                 progressDialog.dismiss()
                 Toast.makeText(this, "No se pudo iniciar sesion debidoa a: ${e.message}", Toast.LENGTH_SHORT).show()
             }
 
+    }
+
+
+    private fun ingresarConHuella() {
+        if (firebaseAuth.currentUser == null) {
+            Toast.makeText(this, R.string.auth_sin_sesion_huella, Toast.LENGTH_LONG).show()
+        } else if (!BiometricAuth.disponible(this)) {
+            Toast.makeText(this, R.string.bio_no_disponible, Toast.LENGTH_LONG).show()
+        } else {
+            BiometricAuth.autenticar(
+                this,
+                onExito = { SesionUtil.abrirPanel(this) },
+                onFallo = { Toast.makeText(this, R.string.bio_fallo, Toast.LENGTH_SHORT).show() }
+            )
+        }
     }
 
 }

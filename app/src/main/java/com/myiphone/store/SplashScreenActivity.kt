@@ -6,13 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.myiphone.store.cliente.MainActivityCliente
 import com.myiphone.store.databinding.ActivitySplashScreenBinding
-import com.myiphone.store.vendedor.MainActivityVendedor
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -56,35 +50,24 @@ class SplashScreenActivity : AppCompatActivity() {
         finish()
     }
 
+    /**
+     * Si ya hay sesión de Firebase y el celular tiene biometría, pide la huella antes de entrar.
+     * Si no hay biometría, entra directo; si falla o cancela, vuelve a la pantalla de bienvenida.
+     */
     private fun comprobarTipoUsuario() {
-        val usuario = firebaseAuth.currentUser
-        if (usuario == null) {
+        if (firebaseAuth.currentUser == null) {
             irASeleccionTipo()
             return
         }
-
-        FirebaseDatabase.getInstance().getReference("Usuarios").child(usuario.uid)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    when (snapshot.child("tipoUsuario").value) {
-                        "vendedor" -> {
-                            startActivity(Intent(this@SplashScreenActivity, MainActivityVendedor::class.java))
-                            finishAffinity()
-                        }
-                        // "cliente" es el valor que guarda el código base; "comprador" se unifica en la fase de autenticación
-                        "cliente", "comprador" -> {
-                            startActivity(Intent(this@SplashScreenActivity, MainActivityCliente::class.java))
-                            finishAffinity()
-                        }
-                        // TODO (fase del administrador): "administrador" -> MainActivityAdmin
-                        else -> irASeleccionTipo()
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    irASeleccionTipo()
-                }
-            })
+        if (BiometricAuth.disponible(this)) {
+            BiometricAuth.autenticar(
+                this,
+                onExito = { SesionUtil.abrirPanel(this) },
+                onFallo = { irASeleccionTipo() }
+            )
+        } else {
+            SesionUtil.abrirPanel(this)
+        }
     }
 
     override fun onDestroy() {

@@ -19,6 +19,7 @@ storageV = "22.0.1"
 mapSecretV = "2.0.1"
 authGoogleV = "21.0.0"
 googleMapsV = "17.0.0"
+biometricV = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +36,7 @@ firebaseDatabase = { group = "com.google.firebase", name = "firebase-database", 
 imagePicker = { group = "com.github.dhaval2404", name = "imagepicker", version.ref = "imagePickerV" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glideV" }
 storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "storageV" }
+biometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometricV" }
 
 authGoogle = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "authGoogleV" }
 

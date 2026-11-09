@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Textos de autenticación (login, registro, recuperación y biometría) -->
+<resources>
+    <string name="auth_email">Correo electrónico</string>
+    <string name="auth_password">Contraseña</string>
+    <string name="auth_confirmar">Confirmar contraseña</string>
+    <string name="auth_nombres">Nombres completos</string>
+    <string name="auth_nombres_v">Nombre del vendedor o tienda</string>
+    <string name="auth_olvide">¿Olvidaste tu contraseña?</string>
+    <string name="auth_btn_ingresar">Ingresar</string>
+    <string name="auth_btn_huella">Ingresar con huella</string>
+    <string name="auth_btn_google">Continuar con Google</string>
+    <string name="auth_btn_registrar">Crear cuenta</string>
+    <string name="auth_ir_registro">¿No tienes cuenta? Regístrate</string>
+    <string name="auth_login_titulo_c">Hola de nuevo</string>
+    <string name="auth_login_sub_c">Ingresa para comprar tu próximo iPhone</string>
+    <string name="auth_login_titulo_v">Panel del vendedor</string>
+    <string name="auth_login_sub_v">Ingresa para gestionar tus productos y pedidos</string>
+    <string name="auth_reg_titulo_c">Crea tu cuenta</string>
+    <string name="auth_reg_sub_c">Compra iPhone nuevos y sellados</string>
+    <string name="auth_reg_titulo_v">Registro de vendedor</string>
+    <string name="auth_reg_sub_v">Empieza a vender iPhone nuevos</string>
+    <string name="auth_rec_titulo">Recuperar contraseña</string>
+    <string name="auth_rec_sub">Te enviaremos un enlace a tu correo para crear una nueva</string>
+    <string name="auth_btn_enviar_enlace">Enviar enlace</string>
+    <string name="auth_volver_login">Volver a iniciar sesión</string>
+    <string name="auth_enlace_enviado">Listo, revisa tu correo (también el spam)</string>
+    <string name="auth_email_invalido">Correo inválido</string>
+    <string name="auth_ingrese_email">Ingresa tu correo</string>
+    <string name="auth_ingrese_password">Ingresa tu contraseña</string>
+    <string name="auth_password_corta">La contraseña debe tener mínimo 6 caracteres</string>
+    <string name="auth_password_no_coincide">Las contraseñas no coinciden</string>
+    <string name="auth_ingrese_nombre">Ingresa tu nombre</string>
+    <string name="auth_espere">Espera un momento…</string>
+    <string name="auth_bienvenido">Bienvenido(a)</string>
+    <string name="auth_sin_sesion_huella">Primero inicia sesión con tu correo para activar la huella</string>
+    <string name="auth_rol_incorrecto">Esta cuenta no pertenece a este tipo de usuario</string>
+    <string name="bio_titulo">Verifica que eres tú</string>
+    <string name="bio_subtitulo">Usa tu huella o el bloqueo del celular</string>
+    <string name="bio_cancelar">Usar contraseña</string>
+    <string name="bio_no_disponible">Este dispositivo no tiene biometría configurada</string>
+    <string name="bio_fallo">No se pudo verificar tu identidad</string>
+</resources>

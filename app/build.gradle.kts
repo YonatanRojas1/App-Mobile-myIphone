@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.storage) /*Subir archivos multimedia*/
     implementation(libs.authGoogle) /*Iniciar con google*/
     implementation(libs.google.maps) /*Google Maps*/
+    implementation(libs.biometric) /*Autenticacion biometrica (huella)*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
