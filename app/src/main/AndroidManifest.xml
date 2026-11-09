@@ -59,6 +59,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".comprador.ProductoDetalleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".comprador.PagoActivity"
+            android:exported="false" />
+        <activity
             android:name=".cliente.MainActivityCliente"
             android:exported="true" />
      <meta-data

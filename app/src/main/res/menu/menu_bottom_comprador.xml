@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bn_inicio" android:icon="@drawable/icono_inicio" android:title="@string/comp_inicio" />
+    <item android:id="@+id/bn_catalogo" android:icon="@drawable/icono_tienda" android:title="@string/comp_catalogo" />
+    <item android:id="@+id/bn_carrito" android:icon="@drawable/ico_carrito_compras" android:title="@string/comp_carrito" />
+    <item android:id="@+id/bn_perfil" android:icon="@drawable/ico_mi_perfil" android:title="@string/comp_perfil" />
+</menu>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MyIphone.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginEnd="12dp" android:layout_marginTop="8dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="12dp">
+        <FrameLayout android:layout_width="72dp" android:layout_height="72dp" android:background="@color/color_primary_container">
+            <ImageView android:id="@+id/ivProducto" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="8dp" android:contentDescription="@string/app_name" android:src="@drawable/ic_iphone" />
+        </FrameLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+            <TextView android:id="@+id/tvNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="15sp" />
+            <TextView android:id="@+id/tvDetalle" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+            <TextView android:id="@+id/tvSubtotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textAppearance="@style/TextAppearance.MyIphone.Price" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnMenos" style="@style/Widget.MyIphone.Button.Outlined" android:layout_width="40dp" android:layout_height="40dp" android:insetTop="0dp" android:insetBottom="0dp" android:minHeight="0dp" android:minWidth="0dp" android:padding="0dp" android:text="−" />
+                <TextView android:id="@+id/tvCantidad" android:layout_width="36dp" android:layout_height="wrap_content" android:gravity="center" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnMas" style="@style/Widget.MyIphone.Button.Outlined" android:layout_width="40dp" android:layout_height="40dp" android:insetTop="0dp" android:insetBottom="0dp" android:minHeight="0dp" android:minWidth="0dp" android:padding="0dp" android:text="+" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageButton android:id="@+id/btnQuitar" android:layout_width="44dp" android:layout_height="44dp" android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/comp_quitar" android:src="@drawable/ico_eliminar_carrito" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

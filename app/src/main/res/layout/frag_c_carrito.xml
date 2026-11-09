@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvCarrito" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:paddingBottom="8dp" android:clipToPadding="false" tools:listitem="@layout/item_carrito_iphone" />
+    <LinearLayout android:id="@+id/grupoVacio" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:visibility="gone" android:padding="24dp">
+        <ImageView android:layout_width="72dp" android:layout_height="72dp" android:alpha="0.5" android:contentDescription="@string/comp_carrito" android:src="@drawable/ico_carrito_compras" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/comp_carrito_vacio" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnSeguirComprando" style="@style/Widget.MyIphone.Button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/comp_ver_catalogo" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/grupoResumen" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_sheet_top" android:elevation="8dp" android:orientation="vertical" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/comp_total" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
+            <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Price" android:textSize="20sp" />
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnPagar" style="@style/Widget.MyIphone.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/comp_ir_pagar" />
+    </LinearLayout>
+</LinearLayout>
