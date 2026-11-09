@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo de MyIphone: celular genérico (sin logos de marca) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <path
+        android:fillColor="#C9C2B8"
+        android:pathData="M52,12 H68 A16,16 0 0 1 84,28 V92 A16,16 0 0 1 68,108 H52 A16,16 0 0 1 36,92 V28 A16,16 0 0 1 52,12 Z" />
+    <path
+        android:fillColor="#E7E1D8"
+        android:pathData="M48,18 H58 A6,6 0 0 1 64,24 V34 A6,6 0 0 1 58,40 H48 A6,6 0 0 1 42,34 V24 A6,6 0 0 1 48,18 Z" />
+    <path
+        android:fillColor="#1B1B1F"
+        android:pathData="M46.2,25 a2.8,2.8 0 1,0 5.6,0 a2.8,2.8 0 1,0 -5.6,0 M55.2,25 a2.8,2.8 0 1,0 5.6,0 a2.8,2.8 0 1,0 -5.6,0 M50.7,33 a2.8,2.8 0 1,0 5.6,0 a2.8,2.8 0 1,0 -5.6,0" />
+</vector>
