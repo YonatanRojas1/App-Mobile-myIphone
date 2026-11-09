@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema de MyIphone. Claro y oscuro comparten este estilo: los colores cambian en values-night/colors.xml. -->
+    <style name="Theme.MyIphone" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Comprador -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/color_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/color_text_primary</item>
+        <!-- Vendedor -->
+        <item name="colorSecondary">@color/color_vendedor</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/color_vendedor_container</item>
+        <item name="colorOnSecondaryContainer">@color/color_text_primary</item>
+        <!-- Administrador -->
+        <item name="colorTertiary">@color/color_admin</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/color_admin_container</item>
+        <item name="colorOnTertiaryContainer">@color/color_text_primary</item>
+        <!-- Superficies -->
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="android:windowBackground">@color/color_background</item>
+        <item name="colorSurface">@color/color_surface</item>
+        <item name="colorOnSurface">@color/color_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/color_text_secondary</item>
+        <item name="colorOutline">@color/color_line</item>
+        <item name="colorError">@color/color_error</item>
+        <!-- Barras del sistema -->
+        <item name="android:statusBarColor">@color/color_bar</item>
+        <item name="android:navigationBarColor">@color/color_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Componentes propios -->
+        <item name="materialButtonStyle">@style/Widget.MyIphone.Button</item>
+        <item name="textInputStyle">@style/Widget.MyIphone.TextInputLayout</item>
+        <item name="materialCardViewStyle">@style/Widget.MyIphone.Card</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyIphone.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyIphone.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyIphone.Large</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+</resources>

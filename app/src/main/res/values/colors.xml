@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Marca MyIphone ===== -->
+    <color name="color_navy">#1F2A44</color>
+    <color name="color_navy_light">#2B3B63</color>
+    <color name="color_bar">#1F2A44</color>
+    <color name="color_on_dark_muted">#B8C2DA</color>
+    <color name="color_admin_on_dark">#B9A6F0</color>
+
+    <!-- Acento por rol -->
+    <color name="color_primary">#3E7BFA</color>            <!-- Comprador -->
+    <color name="color_primary_container">#EAF0FF</color>
+    <color name="color_vendedor">#1E9E6A</color>           <!-- Vendedor -->
+    <color name="color_vendedor_container">#DDF3EA</color>
+    <color name="color_admin">#6C4BC1</color>              <!-- Administrador -->
+    <color name="color_admin_container">#ECE6F8</color>
+
+    <!-- Superficies y texto -->
+    <color name="color_background">#F4F6FA</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_line">#E3E7EF</color>
+    <color name="color_text_primary">#1F2A44</color>
+    <color name="color_text_secondary">#6B7385</color>
+
+    <!-- Estados -->
+    <color name="color_error">#D64545</color>
+    <color name="color_warning">#F2A33A</color>
+    <color name="color_success">#1E9E6A</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <!-- ===== Alias de la base anterior (se eliminan al terminar de migrar los layouts) ===== -->
+    <color name="bg_white">@color/color_background</color>
+    <color name="celeste_claro">@color/color_primary_container</color>
+    <color name="celeste_oscuro">@color/color_primary</color>
+    <color name="celeste">@color/color_primary</color>
+    <color name="text_title">@color/color_text_primary</color>
+    <color name="lila">@color/color_primary_container</color>
+    <color name="gris_claro">@color/color_line</color>
+</resources>

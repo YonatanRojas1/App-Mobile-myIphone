@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_bar">#0F1320</color>
+    <color name="color_primary">#6D9BFF</color>
+    <color name="color_primary_container">#22314F</color>
+    <color name="color_vendedor">#3CC38D</color>
+    <color name="color_vendedor_container">#173B2F</color>
+    <color name="color_admin">#A18CF0</color>
+    <color name="color_admin_container">#2E2650</color>
+    <color name="color_background">#12151C</color>
+    <color name="color_surface">#1B2030</color>
+    <color name="color_line">#2E3547</color>
+    <color name="color_text_primary">#ECEFF6</color>
+    <color name="color_text_secondary">#A3ACC0</color>
+    <color name="color_error">#F07A7A</color>
+</resources>

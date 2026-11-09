@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Intencionalmente vacío: el modo oscuro usa el mismo tema y cambia solo los colores (values-night/colors.xml).
+         Un estilo repetido aquí reemplazaría por completo al de values/themes.xml. -->
+</resources>
