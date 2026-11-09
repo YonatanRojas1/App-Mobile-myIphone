@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Textos transversales (todos los roles). Se agregan aquí para no tocar strings.xml. -->
+<resources>
+    <string name="splash_lema">Tu tienda de iPhone nuevos</string>
+    <string name="bienvenida_pregunta">¿Cómo quieres ingresar?</string>
+    <string name="btn_soy_comprador">Soy comprador</string>
+    <string name="btn_soy_vendedor">Soy vendedor</string>
+    <string name="btn_acceso_admin">Acceso administrador</string>
+    <string name="bienvenida_pie">Solo iPhone nuevos y sellados</string>
+    <string name="admin_proximamente">El acceso de administrador se habilita en una fase posterior</string>
+</resources>

@@ -1,37 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@drawable/bg_gradient_navy"
     tools:context=".SplashScreenActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="Splash_Blum.json"
-            app:lottie_imageAssetsFolder="assets"
-            app:lottie_loop="true" />
+        <!-- Círculo suave con el logo; se anima desde Kotlin (escala y opacidad) -->
+        <FrameLayout
+            android:id="@+id/contenedorLogo"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:background="@drawable/bg_circle_soft">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_logo_myiphone" />
+        </FrameLayout>
 
         <TextView
+            android:id="@+id/tvNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="28dp"
             android:text="@string/app_name"
-            android:textSize="25sp"
-            android:fontFamily="@font/alkalami"
-            android:textColor="@color/text_title"
-            android:textStyle="bold" />
+            android:textAppearance="@style/TextAppearance.MyIphone.Headline.OnDark"
+            android:textSize="36sp" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvLema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/splash_lema"
+            android:textAppearance="@style/TextAppearance.MyIphone.Body"
+            android:textColor="@color/color_on_dark_muted" />
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="56dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/color_primary"
+        app:trackColor="@color/color_navy_light"
+        app:trackCornerRadius="4dp" />
+</FrameLayout>
