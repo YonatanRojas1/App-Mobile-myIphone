@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="vend_panel">Panel del vendedor</string>
+    <string name="vend_resumen">Resumen</string>
+    <string name="vend_productos">Productos</string>
+    <string name="vend_pedidos">Pedidos</string>
+    <string name="vend_pedidos_recibidos">Pedidos recibidos</string>
+    <string name="vend_perfil">Mi perfil</string>
+    <string name="vend_rol">Vendedor</string>
+    <string name="vend_tu_tienda">Tu tienda</string>
+    <string name="vend_resumen_sub">Así va tu negocio hoy</string>
+    <string name="vend_ventas">Ventas (sin pedidos cancelados)</string>
+    <string name="vend_pedidos_total">Pedidos</string>
+    <string name="vend_pendientes">Pendientes</string>
+    <string name="vend_productos_activos">Productos</string>
+    <string name="vend_stock_bajo">Stock bajo (≤ 3)</string>
+    <string name="vend_stock_n">Stock: %1$d</string>
+    <string name="vend_sin_productos">Aún no tienes productos. Toca "Nuevo"</string>
+    <string name="vend_sin_pedidos">Aún no has recibido pedidos</string>
+    <string name="vend_nuevo">Nuevo</string>
+    <string name="vend_editar">Editar</string>
+    <string name="vend_eliminar">Eliminar</string>
+    <string name="vend_cancelar">Cancelar</string>
+    <string name="vend_eliminar_t">Eliminar producto</string>
+    <string name="vend_eliminar_m">¿Seguro que quieres eliminar %1$s del catálogo?</string>
+    <string name="vend_eliminado">Producto eliminado</string>
+    <string name="vend_guardado">Producto guardado</string>
+    <string name="vend_guardar">Guardar producto</string>
+    <string name="vend_cambiar_estado">Cambiar estado del pedido</string>
+    <string name="vend_req">Campo obligatorio</string>
+    <string name="vend_precio_inv">Ingresa un precio válido</string>
+    <string name="vend_stock_inv">Ingresa un stock válido</string>
+    <string name="vend_f_nombre">Nombre (ej. iPhone 17 Pro)</string>
+    <string name="vend_f_serie">Serie (iPhone 17, iPhone 16, iPhone 15)</string>
+    <string name="vend_f_alm">Almacenamiento (ej. 256 GB)</string>
+    <string name="vend_f_color">Color</string>
+    <string name="vend_f_precio">Precio en COP</string>
+    <string name="vend_f_stock">Unidades en stock</string>
+    <string name="vend_f_imagen">URL de la imagen (opcional)</string>
+    <string name="vend_f_desc">Descripción</string>
+    <string name="vend_f_destacado">Mostrar como destacado en el inicio</string>
+</resources>

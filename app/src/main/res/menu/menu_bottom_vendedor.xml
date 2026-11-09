@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bv_resumen" android:icon="@drawable/icono_inicio" android:title="@string/vend_resumen" />
+    <item android:id="@+id/bv_productos" android:icon="@drawable/icono_mis_productos" android:title="@string/vend_productos" />
+    <item android:id="@+id/bv_pedidos" android:icon="@drawable/icono_ordenes" android:title="@string/vend_pedidos" />
+    <item android:id="@+id/bv_perfil" android:icon="@drawable/ico_mi_perfil" android:title="@string/vend_perfil" />
+</menu>

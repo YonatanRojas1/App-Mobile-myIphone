@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nv_resumen" android:icon="@drawable/icono_inicio" android:title="@string/vend_resumen" />
+        <item android:id="@+id/nv_productos" android:icon="@drawable/icono_mis_productos" android:title="@string/vend_productos" />
+        <item android:id="@+id/nv_pedidos" android:icon="@drawable/icono_ordenes" android:title="@string/vend_pedidos_recibidos" />
+        <item android:id="@+id/nv_perfil" android:icon="@drawable/ico_mi_perfil" android:title="@string/vend_perfil" />
+    </group>
+    <item android:id="@+id/nv_cerrar" android:icon="@drawable/icono_salir" android:title="@string/op_cerrar_sesion_v" />
+</menu>

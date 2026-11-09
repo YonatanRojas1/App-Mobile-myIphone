@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/bg_gradient_navy" android:orientation="vertical" android:padding="20dp" android:paddingTop="40dp">
+    <ImageView android:layout_width="56dp" android:layout_height="56dp" android:contentDescription="@string/app_name" android:src="@drawable/ic_logo_myiphone" />
+    <TextView android:id="@+id/tvNombreCab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp"
+        android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textColor="@color/white" android:text="@string/vend_panel" />
+    <TextView android:id="@+id/tvEmailCab" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.MyIphone.Caption" android:textColor="@color/color_on_dark_muted" />
+</LinearLayout>

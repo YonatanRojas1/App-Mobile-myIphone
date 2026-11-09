@@ -67,6 +67,9 @@
         <activity
             android:name=".cliente.MainActivityCliente"
             android:exported="true" />
+        <activity
+            android:name=".vendedor.ProductoFormActivity"
+            android:exported="false" />
      <meta-data
          android:name="com.google.android.geo.API_KEY"
          android:value="${MAPAS_KEY}" />
