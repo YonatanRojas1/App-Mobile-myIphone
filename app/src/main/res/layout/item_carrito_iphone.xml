@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget.MyIphone.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginEnd="12dp" android:layout_marginTop="8dp">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="12dp">
-        <FrameLayout android:layout_width="72dp" android:layout_height="72dp" android:background="@color/color_primary_container">
-            <ImageView android:id="@+id/ivProducto" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="8dp" android:contentDescription="@string/app_name" android:src="@drawable/ic_iphone" />
+    style="@style/Widget.MyIphone.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dim_12" android:layout_marginEnd="@dimen/dim_12" android:layout_marginTop="@dimen/dim_8">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dim_12">
+        <FrameLayout android:layout_width="@dimen/dim_72" android:layout_height="@dimen/dim_72" android:background="@color/color_primary_container">
+            <ImageView android:id="@+id/ivProducto" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/dim_8" android:contentDescription="@string/app_name" android:src="@drawable/ic_iphone" />
         </FrameLayout>
-        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
-            <TextView android:id="@+id/tvNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="15sp" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/dim_12" android:orientation="vertical">
+            <TextView android:id="@+id/tvNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_15" />
             <TextView android:id="@+id/tvDetalle" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
-            <TextView android:id="@+id/tvSubtotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textAppearance="@style/TextAppearance.MyIphone.Price" />
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:gravity="center_vertical" android:orientation="horizontal">
-                <com.google.android.material.button.MaterialButton android:id="@+id/btnMenos" style="@style/Widget.MyIphone.Button.Outlined" android:layout_width="40dp" android:layout_height="40dp" android:insetTop="0dp" android:insetBottom="0dp" android:minHeight="0dp" android:minWidth="0dp" android:padding="0dp" android:text="−" />
-                <TextView android:id="@+id/tvCantidad" android:layout_width="36dp" android:layout_height="wrap_content" android:gravity="center" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
-                <com.google.android.material.button.MaterialButton android:id="@+id/btnMas" style="@style/Widget.MyIphone.Button.Outlined" android:layout_width="40dp" android:layout_height="40dp" android:insetTop="0dp" android:insetBottom="0dp" android:minHeight="0dp" android:minWidth="0dp" android:padding="0dp" android:text="+" />
+            <TextView android:id="@+id/tvSubtotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:textAppearance="@style/TextAppearance.MyIphone.Price" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:gravity="center_vertical" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnMenos" style="@style/Widget.MyIphone.Button.Outlined" android:layout_width="@dimen/dim_40" android:layout_height="@dimen/dim_40" android:insetTop="0dp" android:insetBottom="0dp" android:minHeight="0dp" android:minWidth="0dp" android:padding="0dp" android:text="@string/sim_menos" />
+                <TextView android:id="@+id/tvCantidad" android:layout_width="@dimen/dim_36" android:layout_height="wrap_content" android:gravity="center" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnMas" style="@style/Widget.MyIphone.Button.Outlined" android:layout_width="@dimen/dim_40" android:layout_height="@dimen/dim_40" android:insetTop="0dp" android:insetBottom="0dp" android:minHeight="0dp" android:minWidth="0dp" android:padding="0dp" android:text="@string/sim_mas" />
             </LinearLayout>
         </LinearLayout>
-        <ImageButton android:id="@+id/btnQuitar" android:layout_width="44dp" android:layout_height="44dp" android:background="?attr/selectableItemBackgroundBorderless"
+        <ImageButton android:id="@+id/btnQuitar" android:layout_width="@dimen/dim_44" android:layout_height="@dimen/dim_44" android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/comp_quitar" android:src="@drawable/ico_eliminar_carrito" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

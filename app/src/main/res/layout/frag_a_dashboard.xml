@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_12">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dim_6" android:text="@string/adm_vista_general" android:textAppearance="@style/TextAppearance.MyIphone.Headline" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dim_6" android:layout_marginTop="@dimen/dim_12" android:background="@drawable/bg_gradient_navy" android:orientation="vertical" android:padding="@dimen/dim_20">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vend_ventas" android:textAppearance="@style/TextAppearance.MyIphone.Caption" android:textColor="@color/color_admin_on_dark" />
+            <TextView android:id="@+id/tvVentas" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sim_vacio" android:textAppearance="@style/TextAppearance.MyIphone.Headline.OnDark" android:textSize="@dimen/text_30" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"><com.google.android.material.card.MaterialCardView style="@style/Widget.MyIphone.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/dim_6">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_14">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adm_usuarios_total" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+                    <TextView android:id="@+id/tvUsuarios" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:text="@string/sim_vacio" android:textColor="@color/color_admin" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_20" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView><com.google.android.material.card.MaterialCardView style="@style/Widget.MyIphone.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/dim_6">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_14">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vend_pedidos_total" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+                    <TextView android:id="@+id/tvPedidos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:text="@string/sim_vacio" android:textColor="@color/color_admin" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_20" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView></LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"><com.google.android.material.card.MaterialCardView style="@style/Widget.MyIphone.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/dim_6">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_14">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adm_compradores" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+                    <TextView android:id="@+id/tvCompradores" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:text="@string/sim_vacio" android:textColor="@color/color_admin" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_20" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView><com.google.android.material.card.MaterialCardView style="@style/Widget.MyIphone.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/dim_6">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_14">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/adm_vendedores" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+                    <TextView android:id="@+id/tvVendedores" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:text="@string/sim_vacio" android:textColor="@color/color_admin" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_20" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView></LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"><com.google.android.material.card.MaterialCardView style="@style/Widget.MyIphone.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/dim_6">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_14">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vend_productos_activos" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+                    <TextView android:id="@+id/tvProductos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:text="@string/sim_vacio" android:textColor="@color/color_admin" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_20" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView><com.google.android.material.card.MaterialCardView style="@style/Widget.MyIphone.Card" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_margin="@dimen/dim_6">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_14">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vend_stock_bajo" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+                    <TextView android:id="@+id/tvStockBajo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:text="@string/sim_vacio" android:textColor="@color/color_error" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_20" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView></LinearLayout>
+    </LinearLayout>
+</ScrollView>

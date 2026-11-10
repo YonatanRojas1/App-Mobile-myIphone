@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" style="@style/Widget.MyIphone.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dim_12" android:layout_marginEnd="@dimen/dim_12" android:layout_marginTop="@dimen/dim_8">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dim_12">
+        <TextView android:id="@+id/tvInicial" android:layout_width="@dimen/dim_44" android:layout_height="@dimen/dim_44" android:background="@drawable/bg_circle_soft" android:backgroundTint="@color/color_admin" android:gravity="center" android:textColor="@color/white" android:textSize="@dimen/text_18" android:fontFamily="@font/poppins_bold" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/dim_12" android:orientation="vertical">
+            <TextView android:id="@+id/tvNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_15" />
+            <TextView android:id="@+id/tvEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+            <TextView android:id="@+id/tvRol" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:background="@drawable/bg_badge" android:paddingStart="@dimen/dim_10" android:paddingEnd="@dimen/dim_10" android:paddingTop="@dimen/dim_2" android:paddingBottom="@dimen/dim_2" android:textColor="@color/color_admin" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEditar" style="@style/Widget.MyIphone.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/dim_36" android:textColor="@color/color_admin" android:text="@string/vend_editar" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEliminar" style="@style/Widget.MyIphone.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/dim_36" android:textColor="@color/color_error" android:text="@string/vend_eliminar" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -2,40 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/color_background" android:orientation="vertical" tools:context=".comprador.PagoActivity">
     <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" style="@style/Widget.MyIphone.Toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize" />
     <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/dim_16">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/comp_resumen" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
-            <TextView android:id="@+id/tvResumen" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textAppearance="@style/TextAppearance.MyIphone.Body" />
-            <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end" android:textAppearance="@style/TextAppearance.MyIphone.Price" android:textSize="20sp" />
+            <TextView android:id="@+id/tvResumen" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_4" android:textAppearance="@style/TextAppearance.MyIphone.Body" />
+            <TextView android:id="@+id/tvTotal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="end" android:textAppearance="@style/TextAppearance.MyIphone.Price" android:textSize="@dimen/text_20" />
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/comp_envio" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
-            <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/comp_direccion" >
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_16" android:text="@string/comp_envio" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
+            <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_10" android:hint="@string/comp_direccion" >
             <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDireccion" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPostalAddress" android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/comp_telefono" >
+            <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_10" android:hint="@string/comp_telefono" >
             <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTelefono" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/comp_metodo" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_16" android:text="@string/comp_metodo" android:textAppearance="@style/TextAppearance.MyIphone.Title" />
             <RadioGroup android:id="@+id/rgMetodo" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <RadioButton android:id="@+id/rbTarjeta" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/comp_m_tarjeta" android:textAppearance="@style/TextAppearance.MyIphone.Body" android:checked="true" />
                 <RadioButton android:id="@+id/rbPse" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/comp_m_pse" android:textAppearance="@style/TextAppearance.MyIphone.Body"  />
                 <RadioButton android:id="@+id/rbNequi" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/comp_m_nequi" android:textAppearance="@style/TextAppearance.MyIphone.Body"  />
             </RadioGroup>
             <LinearLayout android:id="@+id/grupoTarjeta" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/comp_num_tarjeta" >
+                <com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_10" android:hint="@string/comp_num_tarjeta" >
             <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTarjeta" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="6dp" android:orientation="vertical"><com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/comp_vence" >
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="@dimen/dim_6" android:orientation="vertical"><com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_10" android:hint="@string/comp_vence" >
             <com.google.android.material.textfield.TextInputEditText android:id="@+id/etVence" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout></LinearLayout>
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp" android:orientation="vertical"><com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="@string/comp_cvv" >
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/dim_6" android:orientation="vertical"><com.google.android.material.textfield.TextInputLayout style="@style/Widget.MyIphone.TextInputLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_10" android:hint="@string/comp_cvv" >
             <com.google.android.material.textfield.TextInputEditText android:id="@+id/etCvv" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberPassword" android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout></LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/comp_nota_pasarela" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
-            <com.google.android.material.button.MaterialButton android:id="@+id/btnPagar" style="@style/Widget.MyIphone.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/comp_pago" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_12" android:text="@string/comp_nota_pasarela" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnPagar" style="@style/Widget.MyIphone.Button" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dim_16" android:text="@string/comp_pago" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

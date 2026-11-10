@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" style="@style/Widget.MyIphone.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginEnd="12dp" android:layout_marginTop="8dp">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="12dp">
-        <FrameLayout android:layout_width="64dp" android:layout_height="64dp" android:background="@color/color_vendedor_container">
-            <ImageView android:id="@+id/ivProducto" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="8dp" android:contentDescription="@string/app_name" android:src="@drawable/ic_iphone" />
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" style="@style/Widget.MyIphone.Card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dim_12" android:layout_marginEnd="@dimen/dim_12" android:layout_marginTop="@dimen/dim_8">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="@dimen/dim_12">
+        <FrameLayout android:layout_width="@dimen/dim_64" android:layout_height="@dimen/dim_64" android:background="@color/color_vendedor_container">
+            <ImageView android:id="@+id/ivProducto" android:layout_width="match_parent" android:layout_height="match_parent" android:padding="@dimen/dim_8" android:contentDescription="@string/app_name" android:src="@drawable/ic_iphone" />
         </FrameLayout>
-        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
-            <TextView android:id="@+id/tvNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="15sp" />
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="@dimen/dim_12" android:orientation="vertical">
+            <TextView android:id="@+id/tvNombre" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Title" android:textSize="@dimen/text_15" />
             <TextView android:id="@+id/tvDetalle" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
             <TextView android:id="@+id/tvPrecio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/color_vendedor" android:textAppearance="@style/TextAppearance.MyIphone.Price" />
             <TextView android:id="@+id/tvStock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAppearance="@style/TextAppearance.MyIphone.Caption" />
         </LinearLayout>
         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-            <com.google.android.material.button.MaterialButton android:id="@+id/btnEditar" style="@style/Widget.MyIphone.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="36dp" android:textColor="@color/color_vendedor" android:text="@string/vend_editar" />
-            <com.google.android.material.button.MaterialButton android:id="@+id/btnEliminar" style="@style/Widget.MyIphone.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="36dp" android:textColor="@color/color_error" android:text="@string/vend_eliminar" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEditar" style="@style/Widget.MyIphone.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/dim_36" android:textColor="@color/color_vendedor" android:text="@string/vend_editar" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEliminar" style="@style/Widget.MyIphone.Button.Text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/dim_36" android:textColor="@color/color_error" android:text="@string/vend_eliminar" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

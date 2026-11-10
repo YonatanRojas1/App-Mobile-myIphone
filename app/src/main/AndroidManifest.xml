@@ -68,6 +68,15 @@
             android:name=".cliente.MainActivityCliente"
             android:exported="true" />
         <activity
+            android:name=".admin.LoginAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.MainActivityAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".admin.UsuarioFormActivity"
+            android:exported="false" />
+        <activity
             android:name=".vendedor.ProductoFormActivity"
             android:exported="false" />
      <meta-data

@@ -2,8 +2,8 @@ package com.myiphone.store
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.myiphone.store.admin.LoginAdminActivity
 import com.myiphone.store.cliente.LoginClienteActivity
 import com.myiphone.store.databinding.ActivitySeleccionarTipoBinding
 import com.myiphone.store.vendedor.LoginVendedorActivity
@@ -25,9 +25,8 @@ class SeleccionarTipoActivity : AppCompatActivity() {
             startActivity(Intent(this@SeleccionarTipoActivity, LoginVendedorActivity::class.java))
         }
 
-        // El login del administrador se crea en una fase posterior
         binding.tipoAdmin.setOnClickListener {
-            Toast.makeText(this, R.string.admin_proximamente, Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this@SeleccionarTipoActivity, LoginAdminActivity::class.java))
         }
     }
 }

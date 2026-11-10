@@ -7,6 +7,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.myiphone.store.admin.MainActivityAdmin
 import com.myiphone.store.cliente.MainActivityCliente
 import com.myiphone.store.vendedor.MainActivityVendedor
 
@@ -25,7 +26,7 @@ object SesionUtil {
                     when (snapshot.child("tipoUsuario").value) {
                         "vendedor" -> irA(activity, MainActivityVendedor::class.java)
                         "cliente", "comprador" -> irA(activity, MainActivityCliente::class.java)
-                        // TODO (fase del administrador): "administrador" -> MainActivityAdmin
+                        "administrador" -> irA(activity, MainActivityAdmin::class.java)
                         else -> irA(activity, SeleccionarTipoActivity::class.java)
                     }
                 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="adm_panel">Panel del administrador</string>
+    <string name="adm_dashboard">Dashboard</string>
+    <string name="adm_usuarios">Usuarios</string>
+    <string name="adm_productos">Productos</string>
+    <string name="adm_reporte">Reporte de ventas</string>
+    <string name="adm_reporte_corto">Reporte</string>
+    <string name="adm_vista_general">Vista general</string>
+    <string name="adm_usuarios_total">Usuarios</string>
+    <string name="adm_compradores">Compradores</string>
+    <string name="adm_vendedores">Vendedores</string>
+    <string name="adm_login_t">Acceso administrador</string>
+    <string name="adm_login_s">Solo cuentas con rol de administrador</string>
+    <string name="adm_volver">Volver</string>
+    <string name="adm_no_es_admin">Esta cuenta no tiene permisos de administrador</string>
+    <string name="adm_sin_usuarios">No hay usuarios registrados</string>
+    <string name="adm_nuevo_usuario">Nuevo usuario</string>
+    <string name="adm_editar_usuario">Editar usuario</string>
+    <string name="adm_password_inicial">Contraseña inicial</string>
+    <string name="adm_rol">Rol</string>
+    <string name="adm_rol_comprador">Comprador</string>
+    <string name="adm_rol_vendedor">Vendedor</string>
+    <string name="adm_rol_admin">Administrador</string>
+    <string name="adm_guardar_usuario">Guardar usuario</string>
+    <string name="adm_usuario_guardado">Usuario guardado</string>
+    <string name="adm_eliminar_usuario">Eliminar usuario</string>
+    <string name="adm_eliminar_usuario_m">¿Eliminar a %1$s del sistema? Perderá el acceso a la app.</string>
+    <string name="adm_usuario_eliminado">Usuario eliminado</string>
+    <string name="adm_no_autoeliminar">No puedes eliminar tu propia cuenta</string>
+    <string name="adm_p_todo">Todo</string>
+    <string name="adm_p_hoy">24 horas</string>
+    <string name="adm_p_7">7 días</string>
+    <string name="adm_p_30">30 días</string>
+    <string name="adm_ventas_periodo">Ventas del periodo (sin cancelados)</string>
+    <string name="adm_ticket">Ticket promedio</string>
+    <string name="adm_mas_vendidos">Modelos más vendidos</string>
+    <string name="adm_sin_ventas">Sin ventas en este periodo</string>
+    <string name="adm_compartir">Compartir reporte</string>
+    <string name="adm_detalle_pedidos">Detalle de pedidos</string>
+</resources>

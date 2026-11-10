@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sim_menos">−</string>
+    <string name="sim_mas">+</string>
+    <string name="sim_vacio">—</string>
+    <string name="cantidad_inicial">1</string>
+    <string name="serie_17">iPhone 17</string>
+    <string name="serie_16">iPhone 16</string>
+    <string name="serie_15">iPhone 15</string>
+</resources>
