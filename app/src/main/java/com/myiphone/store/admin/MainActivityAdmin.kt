@@ -1,6 +1,7 @@
 package com.myiphone.store.admin
 
 import android.content.Intent
+import com.myiphone.store.Db
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
@@ -11,10 +12,6 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.myiphone.store.R
 import com.myiphone.store.SeleccionarTipoActivity
 import com.myiphone.store.databinding.ActivityMainAdminBinding
@@ -72,13 +69,8 @@ class MainActivityAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         val cab = binding.navigationView.getHeaderView(0)
         cab.findViewById<TextView>(R.id.tvEmailCab).text = auth.currentUser?.email
         val tvNombre = cab.findViewById<TextView>(R.id.tvNombreCab)
-        FirebaseDatabase.getInstance().getReference("Usuarios").child(auth.uid!!).child("nombres")
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(sn: DataSnapshot) {
-                    tvNombre.text = sn.getValue(String::class.java).orEmpty()
-                }
-                override fun onCancelled(e: DatabaseError) {}
-            })
+        // Nombre del usuario desde Firestore para el encabezado del menú lateral
+        Db.nombreDeUsuario(auth.uid!!) { tvNombre.text = it }
     }
 
     private fun mostrar(fragment: Fragment, titulo: Int) {

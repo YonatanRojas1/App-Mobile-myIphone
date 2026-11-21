@@ -1,6 +1,6 @@
 package com.myiphone.store.comprador
 
-/** Producto del catálogo (nodo "Productos" en Realtime Database). Solo iPhone nuevos. */
+/** Producto del catálogo (colección "Productos" en Firestore). Solo iPhone nuevos. */
 data class IphoneProducto(
     var id: String = "",
     var nombre: String = "",
@@ -21,7 +21,7 @@ data class ItemPedido(
     var precio: Long = 0
 )
 
-/** Pedido (nodo "Pedidos"). El vendedor y el administrador lo leen en sus paneles. */
+/** Pedido (colección "Pedidos" en Firestore). El vendedor y el administrador lo leen en sus paneles. */
 data class Pedido(
     var id: String = "",
     var compradorUid: String = "",
@@ -33,5 +33,9 @@ data class Pedido(
     var total: Long = 0,
     var estado: String = "Pendiente",
     var fecha: Long = 0,
+    var lat: Double = 0.0,          // latitud capturada con el GPS al comprar
+    var lng: Double = 0.0,          // longitud capturada con el GPS al comprar
+    var refPago: String = "",       // referencia ref_payco de la transaccion en ePayco
+    var estadoPago: String = "",    // respuesta de ePayco (Aceptada, Rechazada...)
     var items: List<ItemPedido> = emptyList()
 )

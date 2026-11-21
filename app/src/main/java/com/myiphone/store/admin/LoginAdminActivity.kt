@@ -7,10 +7,7 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.myiphone.store.Db
 import com.myiphone.store.R
 import com.myiphone.store.databinding.ActivityLoginAdminBinding
 
@@ -21,6 +18,7 @@ class LoginAdminActivity : AppCompatActivity() {
     private val auth = FirebaseAuth.getInstance()
     private lateinit var progreso: ProgressDialog
 
+    /** Infla el layout y conecta los botones de ingresar y volver. */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginAdminBinding.inflate(layoutInflater)
@@ -34,6 +32,7 @@ class LoginAdminActivity : AppCompatActivity() {
         binding.tvVolver.setOnClickListener { finish() }
     }
 
+    /** Valida correo y contraseña y, si están bien, inicia sesión en Firebase Authentication. */
     private fun validar() {
         val email = binding.etEmail.text.toString().trim()
         val pass = binding.etPassword.text.toString().trim()
@@ -52,24 +51,27 @@ class LoginAdminActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Consulta el rol en Firestore (Usuarios/{uid}.tipoUsuario). Si es administrador abre
+     * su panel; si no, cierra la sesión y avisa que no tiene permisos.
+     */
     private fun verificarRol() {
         val uid = auth.uid ?: return
-        FirebaseDatabase.getInstance().getReference("Usuarios").child(uid).child("tipoUsuario")
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(sn: DataSnapshot) {
-                    progreso.dismiss()
-                    if (sn.getValue(String::class.java) == Roles.ADMIN) {
-                        startActivity(Intent(this@LoginAdminActivity, MainActivityAdmin::class.java))
-                        finishAffinity()
-                    } else {
-                        auth.signOut()
-                        Toast.makeText(this@LoginAdminActivity, R.string.adm_no_es_admin, Toast.LENGTH_LONG).show()
-                    }
-                }
-                override fun onCancelled(e: DatabaseError) {
-                    progreso.dismiss()
+        Db.usuarios().document(uid).get()
+            .addOnSuccessListener { doc ->
+                progreso.dismiss()
+                if (doc.getString("tipoUsuario") == Roles.ADMIN) {
+                    startActivity(Intent(this, MainActivityAdmin::class.java))
+                    finishAffinity()
+                } else {
                     auth.signOut()
+                    Toast.makeText(this, R.string.adm_no_es_admin, Toast.LENGTH_LONG).show()
                 }
-            })
+            }
+            .addOnFailureListener {
+                progreso.dismiss()
+                auth.signOut()
+                Toast.makeText(this, R.string.adm_no_es_admin, Toast.LENGTH_LONG).show()
+            }
     }
 }

@@ -1,6 +1,7 @@
 package com.myiphone.store.cliente
 
 import android.app.ProgressDialog
+import com.myiphone.store.Db
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
@@ -9,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.myiphone.store.Constantes
 import com.myiphone.store.databinding.ActivityRegistroClienteBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
 class RegistroClienteActivity : AppCompatActivity() {
     private lateinit var  binding: ActivityRegistroClienteBinding
@@ -109,9 +109,9 @@ class RegistroClienteActivity : AppCompatActivity() {
         datosCliente["imagen"] = ""
         datosCliente["tipoUsuario"] = "cliente"
 
-        val reference = FirebaseDatabase. getInstance().getReference("Usuarios")
-        reference.child(uid!!)
-            .setValue(datosCliente)
+        // Guarda el perfil del comprador en Firestore: Usuarios/{uid}
+        Db.usuarios().document(uid!!)
+            .set(datosCliente)
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 startActivity(Intent(this@RegistroClienteActivity, MainActivityCliente::class.java))

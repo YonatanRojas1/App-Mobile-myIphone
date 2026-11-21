@@ -55,12 +55,14 @@ dependencies {
     implementation(libs.lottie) /*Animaciones*/
     implementation(libs.firebaseAuth) /*Autenticaciión Firebase*/
     implementation(libs.firebaseDatabase) /*Base de datos Firebase*/
+    implementation(libs.firestore) /*Base de datos Cloud Firestore*/
     implementation(libs.imagePicker) /*Recortar una imagen*/
     implementation(libs.glide) /*Leer Imagenes*/
     implementation(libs.storage) /*Subir archivos multimedia*/
     implementation(libs.authGoogle) /*Iniciar con google*/
     implementation(libs.google.maps) /*Google Maps*/
     implementation(libs.biometric) /*Autenticacion biometrica (huella)*/
+    implementation(libs.playLocation) /*Geolocalizacion*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

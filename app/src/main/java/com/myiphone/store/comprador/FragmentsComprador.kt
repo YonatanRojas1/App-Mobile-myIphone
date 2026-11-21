@@ -12,10 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.myiphone.store.Db
 import com.myiphone.store.R
 import com.myiphone.store.cliente.MainActivityCliente
 import com.myiphone.store.databinding.FragCCarritoBinding
@@ -54,14 +51,9 @@ class FragmentHome : Fragment() {
 
         val uid = FirebaseAuth.getInstance().uid
         if (uid != null) {
-            FirebaseDatabase.getInstance().getReference("Usuarios").child(uid).child("nombres")
-                .addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(sn: DataSnapshot) {
-                        val nombre = sn.getValue(String::class.java)?.substringBefore(" ").orEmpty()
-                        _b?.tvSaludo?.text = getString(R.string.comp_saludo, nombre)
-                    }
-                    override fun onCancelled(e: DatabaseError) {}
-                })
+            Db.nombreDeUsuario(uid) { n ->
+                _b?.tvSaludo?.text = getString(R.string.comp_saludo, n.substringBefore(" "))
+            }
         }
 
         ProductosRepo.cargar({ lista ->
@@ -168,20 +160,18 @@ class FragmentPedidos : Fragment() {
         b.rvPedidos.layoutManager = LinearLayoutManager(requireContext())
         b.rvPedidos.adapter = adaptador
         val uid = FirebaseAuth.getInstance().uid ?: return
-        FirebaseDatabase.getInstance().getReference("Pedidos")
-            .orderByChild("compradorUid").equalTo(uid)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(sn: DataSnapshot) {
-                    if (_b == null) return
-                    val lista = sn.children.mapNotNull { it.getValue(Pedido::class.java) }
-                        .sortedByDescending { it.fecha }
-                    adaptador.actualizar(lista)
-                    b.tvVacio.visibility = if (lista.isEmpty()) View.VISIBLE else View.GONE
-                }
-                override fun onCancelled(e: DatabaseError) {
-                    if (_b != null) Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
-                }
-            })
+        // Pedidos del comprador logueado (Firestore: Pedidos donde compradorUid == uid)
+        Db.pedidos().whereEqualTo("compradorUid", uid).get()
+            .addOnSuccessListener { snap ->
+                if (_b == null) return@addOnSuccessListener
+                val lista = snap.documents.mapNotNull { it.toObject(Pedido::class.java) }
+                    .sortedByDescending { it.fecha }
+                adaptador.actualizar(lista)
+                b.tvVacio.visibility = if (lista.isEmpty()) View.VISIBLE else View.GONE
+            }
+            .addOnFailureListener { e ->
+                if (_b != null) Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
     }
 
     override fun onDestroyView() { _b = null; super.onDestroyView() }
@@ -201,17 +191,17 @@ class FragmentPerfil : Fragment() {
     override fun onViewCreated(view: View, s: Bundle?) {
         val usuario = auth.currentUser ?: return
         b.tvEmail.text = usuario.email
-        val ref = FirebaseDatabase.getInstance().getReference("Usuarios").child(usuario.uid)
+        val ref = Db.usuarios().document(usuario.uid)
 
-        ref.child("nombres").addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(sn: DataSnapshot) {
-                val n = sn.getValue(String::class.java).orEmpty()
+        // Carga el nombre guardado en Firestore
+        ref.get().addOnSuccessListener { doc ->
+            run {
+                val n = doc.getString("nombres").orEmpty()
                 _b?.etNombre?.setText(n)
                 _b?.tvInicial?.text = n.take(1).uppercase()
                 _b?.tvNombre?.text = n
             }
-            override fun onCancelled(e: DatabaseError) {}
-        })
+        }
 
         b.btnGuardar.setOnClickListener {
             val nuevo = b.etNombre.text.toString().trim()
@@ -219,7 +209,7 @@ class FragmentPerfil : Fragment() {
                 b.etNombre.error = getString(R.string.auth_ingrese_nombre)
                 return@setOnClickListener
             }
-            ref.child("nombres").setValue(nuevo).addOnSuccessListener {
+            ref.update("nombres", nuevo).addOnSuccessListener {
                 b.tvNombre.text = nuevo
                 b.tvInicial.text = nuevo.take(1).uppercase()
                 Toast.makeText(requireContext(), R.string.comp_perfil_guardado, Toast.LENGTH_SHORT).show()

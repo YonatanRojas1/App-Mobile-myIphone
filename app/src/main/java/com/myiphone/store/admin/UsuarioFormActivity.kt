@@ -1,13 +1,13 @@
 package com.myiphone.store.admin
 
 import android.os.Bundle
+import com.myiphone.store.Db
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import com.myiphone.store.Constantes
 import com.myiphone.store.R
 import com.myiphone.store.databinding.ActivityUsuarioFormBinding
@@ -61,8 +61,8 @@ class UsuarioFormActivity : AppCompatActivity() {
         val uid = uidEditar
         if (uid != null) {
             binding.btnGuardar.isEnabled = false
-            val ref = FirebaseDatabase.getInstance().getReference("Usuarios").child(uid)
-            ref.updateChildren(mapOf("nombres" to nombre, "tipoUsuario" to rolElegido()))
+            val ref = Db.usuarios().document(uid)
+            ref.update(mapOf("nombres" to nombre, "tipoUsuario" to rolElegido()))
                 .addOnSuccessListener { Toast.makeText(this, R.string.adm_usuario_guardado, Toast.LENGTH_SHORT).show(); finish() }
                 .addOnFailureListener { e -> binding.btnGuardar.isEnabled = true; Toast.makeText(this, e.message, Toast.LENGTH_LONG).show() }
             return
@@ -86,7 +86,7 @@ class UsuarioFormActivity : AppCompatActivity() {
                     "tRegistro" to "${Constantes().obtenerTiempoD()}", "imagen" to "",
                     "tipoUsuario" to rolElegido()
                 )
-                FirebaseDatabase.getInstance().getReference("Usuarios").child(nuevoUid).setValue(datos)
+                Db.usuarios().document(nuevoUid).set(datos)
                     .addOnSuccessListener {
                         authSec.signOut()
                         Toast.makeText(this, R.string.adm_usuario_guardado, Toast.LENGTH_SHORT).show()

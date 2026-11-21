@@ -1,9 +1,6 @@
 package com.myiphone.store.comprador
 
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.myiphone.store.Db
 
 /**
  * Acceso a los productos en Firebase. Si el nodo "Productos" está vacío se siembra
@@ -11,33 +8,32 @@ import com.google.firebase.database.ValueEventListener
  */
 object ProductosRepo {
 
-    private val ref get() = FirebaseDatabase.getInstance().getReference("Productos")
-
+    /**
+     * Lee todos los productos de Firestore. Si la colección está vacía, siembra el catálogo
+     * inicial (7 iPhone de ejemplo) con un batch y lo devuelve.
+     */
     fun cargar(onOk: (List<IphoneProducto>) -> Unit, onError: (String) -> Unit) {
-        ref.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (!snapshot.exists()) {
+        val col = Db.productos()
+        col.get()
+            .addOnSuccessListener { snap ->
+                if (snap.isEmpty) {
                     val semilla = catalogoInicial()
-                    semilla.forEach { ref.child(it.id).setValue(it) }
+                    val batch = Db.firestore.batch()
+                    semilla.forEach { batch.set(col.document(it.id), it) }
+                    batch.commit()
                     onOk(semilla)
                 } else {
-                    val lista = snapshot.children.mapNotNull { it.getValue(IphoneProducto::class.java) }
-                    onOk(lista)
+                    onOk(snap.documents.mapNotNull { it.toObject(IphoneProducto::class.java) })
                 }
             }
-
-            override fun onCancelled(error: DatabaseError) = onError(error.message)
-        })
+            .addOnFailureListener { onError(it.message ?: "Error al leer productos") }
     }
 
+    /** Busca un producto por su id; entrega null si no existe o falla la lectura. */
     fun porId(id: String, onOk: (IphoneProducto?) -> Unit) {
-        ref.child(id).addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                onOk(snapshot.getValue(IphoneProducto::class.java))
-            }
-
-            override fun onCancelled(error: DatabaseError) = onOk(null)
-        })
+        Db.productos().document(id).get()
+            .addOnSuccessListener { onOk(it.toObject(IphoneProducto::class.java)) }
+            .addOnFailureListener { onOk(null) }
     }
 
     private fun p(id: String, nombre: String, serie: String, alm: String, color: String,

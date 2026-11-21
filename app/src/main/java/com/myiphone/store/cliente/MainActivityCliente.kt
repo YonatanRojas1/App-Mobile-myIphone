@@ -1,6 +1,7 @@
 package com.myiphone.store.cliente
 
 import android.content.Intent
+import com.myiphone.store.Db
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.OnBackPressedCallback
@@ -10,10 +11,6 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.myiphone.store.R
 import com.myiphone.store.SeleccionarTipoActivity
 import com.myiphone.store.comprador.CarritoManager
@@ -41,6 +38,9 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
             finishAffinity()
             return
         }
+
+        // Recupera el carrito guardado en Firestore
+        CarritoManager.cargarDesdeNube()
 
         setSupportActionBar(binding.toolbar)
         val toggle = ActionBarDrawerToggle(this, binding.drawerLayout, binding.toolbar,
@@ -100,13 +100,8 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
         val tvNombre = cab.findViewById<android.widget.TextView>(R.id.tvNombreCab)
         val tvEmail = cab.findViewById<android.widget.TextView>(R.id.tvEmailCab)
         tvEmail.text = auth.currentUser?.email
-        FirebaseDatabase.getInstance().getReference("Usuarios").child(auth.uid!!).child("nombres")
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onDataChange(sn: DataSnapshot) {
-                    tvNombre.text = sn.getValue(String::class.java).orEmpty()
-                }
-                override fun onCancelled(e: DatabaseError) {}
-            })
+        // Nombre del usuario desde Firestore para el encabezado del menú lateral
+        Db.nombreDeUsuario(auth.uid!!) { tvNombre.text = it }
     }
 
     private fun mostrar(fragment: Fragment, titulo: Int) {
@@ -117,7 +112,7 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
     fun abrirCatalogo() { binding.bottomNav.selectedItemId = R.id.bn_catalogo }
 
     fun cerrarSesion() {
-        CarritoManager.vaciar()
+        CarritoManager.limpiarLocal()
         auth.signOut()
         startActivity(Intent(this, SeleccionarTipoActivity::class.java))
         finishAffinity()

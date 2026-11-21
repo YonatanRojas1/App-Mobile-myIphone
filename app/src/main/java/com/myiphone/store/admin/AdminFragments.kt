@@ -1,6 +1,7 @@
 package com.myiphone.store.admin
 
 import android.content.Intent
+import com.myiphone.store.Db
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import com.myiphone.store.R
 import com.myiphone.store.comprador.Formato
 import com.myiphone.store.comprador.IphoneProducto
@@ -104,7 +104,7 @@ class AUsuariosFragment : Fragment() {
             .setMessage(getString(R.string.adm_eliminar_usuario_m, u.nombres))
             .setNegativeButton(R.string.vend_cancelar, null)
             .setPositiveButton(R.string.vend_eliminar) { _, _ ->
-                FirebaseDatabase.getInstance().getReference("Usuarios").child(u.uid).removeValue()
+                Db.usuarios().document(u.uid).delete()
                     .addOnSuccessListener {
                         Toast.makeText(requireContext(), R.string.adm_usuario_eliminado, Toast.LENGTH_SHORT).show()
                         cargar()
@@ -152,7 +152,7 @@ class AProductosFragment : Fragment() {
             .setMessage(getString(R.string.vend_eliminar_m, p.nombre))
             .setNegativeButton(R.string.vend_cancelar, null)
             .setPositiveButton(R.string.vend_eliminar) { _, _ ->
-                FirebaseDatabase.getInstance().getReference("Productos").child(p.id).removeValue()
+                Db.productos().document(p.id).delete()
                     .addOnSuccessListener { cargar() }
             }
             .show()

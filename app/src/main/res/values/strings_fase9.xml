@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pago_ubicacion_btn">Usar mi ubicación actual</string>
+    <string name="pago_ubicando">Buscando tu ubicación…</string>
+    <string name="pago_ubicacion_ok">Ubicación capturada: %1$s, %2$s</string>
+    <string name="pago_ubicacion_error">No se pudo obtener la ubicación. Activa el GPS e intenta de nuevo.</string>
+    <string name="pago_permiso_denegado">Sin permiso de ubicación puedes escribir la dirección a mano.</string>
+    <string name="pago_descripcion">Compra de iPhone en MyIphone</string>
+    <string name="pago_nota_epayco">El pago se procesa con ePayco en modo de pruebas: no se cobra dinero real. Tarjeta de prueba: 4575 6231 8229 0326, fecha futura y CVC 123.</string>
+    <string name="epayco_cancelado">Cancelaste el pago.</string>
+    <string name="epayco_no_completado">Pago no completado</string>
+    <string name="vend_imagen_btn">Tomar foto o elegir de la galería</string>
+    <string name="vend_ok">Aceptar</string>
+    <string name="vend_subiendo">Subiendo imagen…</string>
+</resources>

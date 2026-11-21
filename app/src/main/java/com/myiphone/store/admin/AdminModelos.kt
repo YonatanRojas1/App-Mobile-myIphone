@@ -1,11 +1,8 @@
 package com.myiphone.store.admin
 
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.myiphone.store.Db
 
-/** Usuario de la app (nodo "Usuarios"). Los campos que no se listan aquí se ignoran. */
+/** Usuario de la app (colección "Usuarios" de Firestore). Los campos que no se listan aquí se ignoran. */
 data class UsuarioApp(
     var uid: String = "",
     var nombres: String = "",
@@ -25,14 +22,13 @@ object Roles {
     }
 }
 
+/** Lee todos los usuarios de Firestore, ordenados por nombre. */
 fun cargarUsuarios(onOk: (List<UsuarioApp>) -> Unit, onError: (String) -> Unit) {
-    FirebaseDatabase.getInstance().getReference("Usuarios")
-        .addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(sn: DataSnapshot) {
-                onOk(sn.children.mapNotNull { ds ->
-                    ds.getValue(UsuarioApp::class.java)?.also { if (it.uid.isEmpty()) it.uid = ds.key.orEmpty() }
-                }.sortedBy { it.nombres.lowercase() })
-            }
-            override fun onCancelled(e: DatabaseError) = onError(e.message)
-        })
+    Db.usuarios().get()
+        .addOnSuccessListener { snap ->
+            onOk(snap.documents.mapNotNull { d ->
+                d.toObject(UsuarioApp::class.java)?.also { if (it.uid.isEmpty()) it.uid = d.id }
+            }.sortedBy { it.nombres.lowercase() })
+        }
+        .addOnFailureListener { onError(it.message ?: "Error") }
 }

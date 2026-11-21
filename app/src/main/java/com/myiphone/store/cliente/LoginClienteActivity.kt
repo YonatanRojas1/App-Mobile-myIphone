@@ -1,6 +1,7 @@
 package com.myiphone.store.cliente
 
 import android.app.ProgressDialog
+import com.myiphone.store.Db
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
@@ -20,7 +21,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.FirebaseDatabase
 
 class LoginClienteActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginClienteBinding
@@ -190,9 +190,9 @@ class LoginClienteActivity : AppCompatActivity() {
         datosCliente["imagen"] = ""
         datosCliente["tipoUsuario"] = "cliente"
 
-        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
-        ref.child(uid!!)
-            .setValue(datosCliente)
+        // Primer ingreso con Google: se crea el perfil del comprador en Firestore
+        Db.usuarios().document(uid!!)
+            .set(datosCliente)
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 startActivity(Intent(this, MainActivityCliente::class.java))

@@ -1,6 +1,7 @@
 package com.myiphone.store.vendedor
 
 import android.app.ProgressDialog
+import com.myiphone.store.Db
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
@@ -10,7 +11,6 @@ import com.myiphone.store.Constantes
 import com.myiphone.store.R
 import com.myiphone.store.databinding.ActivityRegistroVendedorBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
 class RegistroVendedorActivity : AppCompatActivity() {
 
@@ -118,9 +118,9 @@ class RegistroVendedorActivity : AppCompatActivity() {
         datosVendedor["tipoUsuario"] = "vendedor"
         datosVendedor["tiempo_registro"] = tiempoBD
 
-        val references = FirebaseDatabase.getInstance().getReference("Usuarios")
-        references.child(uidBD!!)
-            .setValue(datosVendedor)
+        // Guarda el perfil del vendedor en Firestore: Usuarios/{uid}
+        Db.usuarios().document(uidBD!!)
+            .set(datosVendedor)
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 startActivity(Intent(this, MainActivityVendedor::class.java))

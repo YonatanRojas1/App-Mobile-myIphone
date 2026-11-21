@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -24,6 +26,9 @@
         android:theme="@style/Theme.MyIphone">
         <activity
             android:name=".cliente.ProductosC.ProductosCatCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".comprador.EpaycoActivity"
             android:exported="false" />
         <activity
             android:name=".vendedor.Productos.AgregarProductoActivity"
